@@ -10,6 +10,10 @@
   text-align: center;
   position: relative;
   top: 200px;
+  border: 5px solid rgb(34, 13, 13);
+  width: 30%;
+  left: 35%;
+  padding-top: 20px;
 }
 
 img {

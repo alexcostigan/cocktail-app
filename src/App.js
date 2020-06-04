@@ -1,22 +1,11 @@
 import React from "react";
 import "./App.css";
 import axios from "axios";
-import cocktail from './coktail.jpg';
-
+import Drink from './components/Drink'
 class App extends React.Component {
   state = {
-    drink: "",
-    loading: false,
-    image: {cocktail}
-  };
-
-  componentDidMount = async () => {
-    this.setState({
-      loading: true,
-
-    });
-
-    this.generateRandomDrink();
+    shaking: true,
+    making: false
   };
 
   generateRandomDrink = async () => {
@@ -31,23 +20,39 @@ class App extends React.Component {
       measure3:response.data.drinks[0].strMeasure3,
       instructions: response.data.drinks[0].strInstructions,
       image: response.data.drinks[0].strDrinkThumb,
-      loading: false
+      shaking: false,
+      making: true
     });
     
   };
 
 
-  render() {
+  generateRandomCocktail = () => {
     
+    setTimeout(() => {
+      this.generateRandomDrink()
+    }, 2000)
+
+    this.setState({
+      shaking: true,
+      making: false
+    })
+  }
+
+  
+  render() {
+
     return (
+    
       <div className="container">
         <div className="title"> Make me a Cocktail! </div>
-        <button onClick={this.generateRandomDrink} className="button">Random Cocktail</button>
+        <button onClick={this.generateRandomCocktail} className="button">Random Cocktail</button>
+        <Drink shaking={this.state.shaking} />
         <p className="name">{this.state.drink} </p> <img src={this.state.image} /> <br />
 
-        <p className="ingredients">{this.state.ingredient} -</p>  <p className="measure">{this.state.measure}</p> <br />
-        <p className="ingredients">{this.state.ingredient2} -</p>  <p className="measure">{this.state.measure2}</p> <br />
-        <p className="ingredients">{this.state.ingredient3} -</p>  <p className="measure">{this.state.measure3}</p> <br />
+        <p className="ingredients">{this.state.ingredient} </p>  <p className="measure">{this.state.measure}</p> <br />
+        <p className="ingredients">{this.state.ingredient2} </p>  <p className="measure">{this.state.measure2}</p> <br />
+        <p className="ingredients">{this.state.ingredient3} </p>  <p className="measure">{this.state.measure3}</p> <br />
         <p className="instructions">{this.state.instructions}</p>
       </div>
     );
