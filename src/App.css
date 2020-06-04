@@ -66,9 +66,79 @@ img {
   box-shadow: 0 0 0        rgba(163,177,198,0.6), -0 -0 0    rgba(236, 240, 241, 0.6), 3px 3px 5px        rgba(163,177,198,0.6) inset, -3px -3px 3px rgba(255,255,255, 0.3) inset;
 }
 
-@media only screen and (max-device-width: 480px) {
+/* ----------- iPhone 6, 6S, 7 and 8 ----------- */
+
+/* Portrait and Landscape */
+@media only screen and (max-width: 600px) {
   .container {
-      width: 400px;
-      font-size: 140%;
+    position: relative;
+    top: 100%;
+    border: none;
+    text-align: center;
+    width: 50%;
+  }
+  
+  img {
+    height: 120px;
+    width: auto;
+    border-radius: 10%;
+    position: relative;
+    right: 30px;
+  }
+  
+  .title {
+    font-size: 30px;
+    display: block;
+    position: relative;
+    right: 30px;
+  }
+  
+  .name {
+    font-size: 20px;
+    position: relative;
+    right: 30px;
+  }
+  
+  .ingredients {
+    display: block;
+    font-size: 20px;
+    font-weight: 550;
+    position: relative;
+    right: 30px;
+  }
+  
+  .measure {
+    display: block;
+    font-size: 18px;
+    font-style: italic;
+    position: relative;
+    right: 30px;
+  }
+  
+  .instructions {
+    padding: 10px;
+    font-size: 18px;
+    font-style: italic;
+    position: relative;
+    right: 30px;
+  }
+  
+  .button {
+    color: white;
+    position: relative;
+    right: 60px;
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    background-color:#290d0d;
+    box-shadow: 9px 9px 16px #39111168;
+    transition: all 0.3s;
+    cursor: pointer;
+    outline: 0;
+  }
+  
+  .button:hover, .button:focus {
+    box-shadow: 0 0 0        rgba(163,177,198,0.6), -0 -0 0    rgba(236, 240, 241, 0.6), 3px 3px 5px        rgba(163,177,198,0.6) inset, -3px -3px 3px rgba(255,255,255, 0.3) inset;
   }
 }
+
