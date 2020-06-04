@@ -13,7 +13,7 @@
   border: 5px solid rgb(34, 13, 13);
   width: 30%;
   left: 35%;
-  padding-top: 20px;
+  padding: 30px;
 }
 
 img {
@@ -64,4 +64,11 @@ img {
 
 .button:hover, .button:focus {
   box-shadow: 0 0 0        rgba(163,177,198,0.6), -0 -0 0    rgba(236, 240, 241, 0.6), 3px 3px 5px        rgba(163,177,198,0.6) inset, -3px -3px 3px rgba(255,255,255, 0.3) inset;
+}
+
+@media only screen and (max-device-width: 480px) {
+  .container {
+      width: 400px;
+      font-size: 140%;
+  }
 }
